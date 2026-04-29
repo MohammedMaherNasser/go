@@ -1,0 +1,154 @@
+:root{
+  --card-width: 280px;
+  --radius: 22px;
+  --light-bg: #e9eef6;
+  --light-shadow1: 18px 18px 36px #c7d0df;
+  --light-shadow2: -18px -18px 36px #ffffff;
+  --accent: #00a8ff;
+}
+
+/* بطاقة نيو مورفزم أساسية */
+.neo-card {
+  width: var(--card-width);
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #f0f4fb 0%, #e6eefb 100%);
+  box-shadow: var(--light-shadow1), var(--light-shadow2);
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(.2,.9,.2,1), box-shadow 0.4s ease, background 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير دخول */
+.neo-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideIn 0.7s ease forwards;
+  animation-delay: 0.08s;
+}
+
+/* Hover افتراضي خفيف (يبقى لدينا تحكم عبر JS للحركة القوية) */
+.neo-card:hover {
+  cursor: pointer;
+}
+
+/* غلاف الصورة لإضافة عمق */
+.avatar-wrap{
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.6), rgba(255,255,255,0.15));
+  box-shadow: inset 6px 6px 12px rgba(255,255,255,0.6), inset -6px -6px 12px rgba(0,0,0,0.03);
+  transform: translateZ(40px);
+}
+
+/* الصورة محسّنة لِـ ليلى تبدو أجمل */
+.neo-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0,168,255,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  transform: translateZ(40px);
+  filter: saturate(1.05) contrast(1.02);
+}
+
+/* عند hover، الصورة تبرز أكثر */
+.neo-card:hover .neo-avatar {
+  transform: translateZ(60px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0,168,255,0.28);
+}
+
+/* النصوص */
+.neo-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 6px 0 2px;
+  color: #0f1724;
+  transform: translateZ(30px);
+}
+
+.neo-major {
+  font-size: 14px;
+  color: #5b6b7a;
+  margin-bottom: 14px;
+  transform: translateZ(20px);
+}
+
+/* معلومات */
+.neo-info {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #f7fbff, #eef6ff);
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  box-shadow: inset 4px 4px 8px rgba(255,255,255,0.6), inset -4px -4px 8px rgba(0,0,0,0.02);
+  transform: translateZ(10px);
+}
+
+.label {
+  color: #7b8a98;
+  font-size: 13px;
+}
+
+.value {
+  font-weight: 700;
+  color: #0b2540;
+}
+
+/* الشارة */
+.neo-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  transform: translateZ(20px);
+}
+
+.excellent {
+  background: linear-gradient(90deg, #28a745, #1fa35a);
+  box-shadow: 0 8px 20px rgba(40,167,69,0.18);
+}
+
+.good {
+  background: linear-gradient(90deg, #ff9800, #ffb74d);
+  box-shadow: 0 8px 20px rgba(255,152,0,0.16);
+}
+
+/* Animation دخول */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .neo-card { width: 100%; max-width: 420px; }
+}
+
+/* تحسين الوصول */
+.neo-card:focus {
+  outline: 3px solid rgba(0,168,255,0.18);
+  outline-offset: 6px;
+}
