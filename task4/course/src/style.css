@@ -1,0 +1,105 @@
+/* ====== GENERAL ====== */
+body {
+  background: #f5f7fa;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ====== COURSES CARDS ====== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin: 0;
+  color: #0077ff;
+}
+
+/* ====== FORM ====== */
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form button {
+  padding: 12px 20px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #005ad1;
+}
+
+/* ====== LIST ====== */
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  background: white;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.delete {
+  background: #ff3b3b;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete:hover {
+  background: #d60000;
+}

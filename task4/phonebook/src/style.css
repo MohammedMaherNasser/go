@@ -1,0 +1,29 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 300px;
+}
+
+.form button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  background: white;
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
